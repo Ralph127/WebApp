@@ -4,6 +4,7 @@ import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import { connect } from 'react-redux';
 import { getFruits, deleteFruit } from '../actions/fruitActions';
 import PropTypes from 'prop-types';
+import FruitModal from './FruitModal';
 
 class FruitsList extends Component {
 
@@ -20,6 +21,7 @@ class FruitsList extends Component {
 
         return(
             <Container>
+                <FruitModal/>
                     <ListGroup>
                         <TransitionGroup className="Fruit-list">
                             {fruits.map(({_id, name, price}) => (
@@ -30,8 +32,7 @@ class FruitsList extends Component {
                                             color="danger"
                                             size="sm"
                                             onClick={this.onDeleteClick.bind(this, _id)}>&times;</Button>
-                                        {name}
-                                        {price}
+                                        <b>Name</b> {name} {price}                     
                                     </ListGroupItem>
                                     
                                 </CSSTransition>

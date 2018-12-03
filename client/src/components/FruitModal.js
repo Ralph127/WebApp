@@ -16,7 +16,7 @@ class FruitModal extends Component {
     state = {
         modal: false,
         name: '',
-        price: 0
+        price: ''
     }
 
     toggle = () => {
@@ -25,19 +25,15 @@ class FruitModal extends Component {
         });
     };
 
-    onChange = e => {
-        this.setState({ 
-            [e.target.name]: e.target.value,
-            [e.target.price]: e.target.value 
-        });
-    };
 
     onSubmit = e => {
         e.preventDefault();
 
+        console.log(`Name: ${this.state.name}`);
+        console.log(`Price: ${this.state.price}`)
         const newFruit = {
             name: this.state.name,
-            price : this.state.price
+            price : '$' + this.state.price
         }
 
         //Add fruit via addFruit action
@@ -48,6 +44,7 @@ class FruitModal extends Component {
     }
 
     render(){
+
         return(
             <div>
                 <Button 
@@ -71,23 +68,28 @@ class FruitModal extends Component {
                                 name="name"
                                 id="fruit"
                                 placeholder="Add Fruit Item"
-                                onChange={this.onChange}/>
-
+                                value={this.state.name}
+                                onChange={e => this.setState({name: e.target.value})}/>
+                            </FormGroup>
+                            <FormGroup>
                                 <Label for="price">Price</Label>
                                 <Input
                                 type="text"
                                 price="price"
                                 id="price"
                                 placeholder="Add Price"
-                                onChange={this.onChange}/>
+                                value={this.state.price}
+                                onChange={e => this.setState({price: e.target.value})}/>
+                            </FormGroup>
 
                                 <Button
                                 color="dark"
                                 style={{ marginTop: '2rem' }}
                                 block
                                 >
-                                Add Fruit</Button>
-                            </FormGroup>
+                                Add Fruit
+                                </Button>
+                            
                         </Form>
                     </ModalBody>
                 </Modal>
