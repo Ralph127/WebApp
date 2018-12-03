@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { getVegetables, deleteVegetable } from '../actions/vegetableActions';
 import PropTypes from 'prop-types';
 import VegetableModal from './VegetableModal';
+import AppNavbar from './AppNavbar';
 
 class VegetablesList extends Component {
 
@@ -20,7 +21,10 @@ class VegetablesList extends Component {
         const { vegetables } = this.props.vegetable;
 
         return(
+            
             <Container>
+                <AppNavbar/>
+                <h3>Vegetable List</h3>
                 <VegetableModal/>
                     <ListGroup>
                         <TransitionGroup className="Vegetable-List">

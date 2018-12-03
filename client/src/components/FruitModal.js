@@ -16,7 +16,8 @@ class FruitModal extends Component {
     state = {
         modal: false,
         name: '',
-        price: ''
+        price: '',
+        producer: ''
     }
 
     toggle = () => {
@@ -30,10 +31,12 @@ class FruitModal extends Component {
         e.preventDefault();
 
         console.log(`Name: ${this.state.name}`);
-        console.log(`Price: ${this.state.price}`)
+        console.log(`Price: ${this.state.price}`);
+        console.log(`Producer: ${this.state.producer}`);
         const newFruit = {
             name: this.state.name,
-            price : '$' + this.state.price
+            price : '$' + this.state.price,
+            producer: 'Sold by: ' + this.state.producer
         }
 
         //Add fruit via addFruit action
@@ -80,6 +83,16 @@ class FruitModal extends Component {
                                 placeholder="Add Price"
                                 value={this.state.price}
                                 onChange={e => this.setState({price: e.target.value})}/>
+                            </FormGroup>
+                            <FormGroup>
+                                <Label for="producer">Produced by</Label>
+                                <Input
+                                type="text"
+                                price="producer"
+                                id="producer"
+                                placeholder="Produced by"
+                                value={this.state.producer}
+                                onChange={e => this.setState({producer: e.target.value})}/>
                             </FormGroup>
 
                                 <Button

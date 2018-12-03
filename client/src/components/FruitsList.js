@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { getFruits, deleteFruit } from '../actions/fruitActions';
 import PropTypes from 'prop-types';
 import FruitModal from './FruitModal';
+import AppNavbar from './AppNavbar';
 
 class FruitsList extends Component {
 
@@ -21,10 +22,12 @@ class FruitsList extends Component {
 
         return(
             <Container>
+                <AppNavbar/>
+                <h1>Fruit List</h1>
                 <FruitModal/>
                     <ListGroup>
                         <TransitionGroup className="Fruit-list">
-                            {fruits.map(({_id, name, price}) => (
+                            {fruits.map(({_id, name, price, producer}) => (
                                 <CSSTransition key={_id} timeout={500} classNames="fade">
                                     <ListGroupItem>
                                         <Button
@@ -32,7 +35,8 @@ class FruitsList extends Component {
                                             color="danger"
                                             size="sm"
                                             onClick={this.onDeleteClick.bind(this, _id)}>&times;</Button>
-                                        <b>Name</b> {name} {price}                     
+                                        <b>Name</b> {name} {price}
+                                        <b> Sold by </b> {producer}                     
                                     </ListGroupItem>
                                     
                                 </CSSTransition>

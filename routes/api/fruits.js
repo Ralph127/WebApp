@@ -19,7 +19,8 @@ router.get('/', (req, res) => {
 router.post('/', (req, res) => {
     const newFruit = new Fruit({
         name: req.body.name,
-        price: req.body.price
+        price: req.body.price,
+        producer: req.body.producer
     });
 
     newFruit.save().then(fruit => res.json(fruit));

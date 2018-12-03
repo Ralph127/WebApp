@@ -14,6 +14,10 @@ const VegetableSchema = new Schema({
     date: {
         type: Date,
         default: Date.now
+    },
+    producer: {
+        type: String,
+        require: true
     }
 });
 
