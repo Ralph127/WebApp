@@ -16,6 +16,7 @@ class FruitModal extends Component {
     state = {
         modal: false,
         name: '',
+        price: 0
     }
 
     toggle = () => {
@@ -26,7 +27,8 @@ class FruitModal extends Component {
 
     onChange = e => {
         this.setState({ 
-            [e.target.name]: e.target.value 
+            [e.target.name]: e.target.value,
+            [e.target.price]: e.target.value 
         });
     };
 
@@ -34,7 +36,8 @@ class FruitModal extends Component {
         e.preventDefault();
 
         const newFruit = {
-            name: this.state.name
+            name: this.state.name,
+            price : this.state.price
         }
 
         //Add fruit via addFruit action
@@ -69,6 +72,15 @@ class FruitModal extends Component {
                                 id="fruit"
                                 placeholder="Add Fruit Item"
                                 onChange={this.onChange}/>
+
+                                <Label for="price">Price</Label>
+                                <Input
+                                type="text"
+                                price="price"
+                                id="price"
+                                placeholder="Add Price"
+                                onChange={this.onChange}/>
+
                                 <Button
                                 color="dark"
                                 style={{ marginTop: '2rem' }}

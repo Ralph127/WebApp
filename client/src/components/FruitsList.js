@@ -31,6 +31,7 @@ class FruitsList extends Component {
                                             size="sm"
                                             onClick={this.onDeleteClick.bind(this, _id)}>&times;</Button>
                                         {name}
+                                        {price}
                                     </ListGroupItem>
                                     
                                 </CSSTransition>
