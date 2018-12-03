@@ -36,7 +36,7 @@ class FruitModal extends Component {
         const newFruit = {
             name: this.state.name,
             price : '$' + this.state.price,
-            producer: 'Sold by: ' + this.state.producer
+            producer: this.state.producer
         }
 
         //Add fruit via addFruit action

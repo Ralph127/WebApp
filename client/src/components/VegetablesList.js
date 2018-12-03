@@ -28,7 +28,7 @@ class VegetablesList extends Component {
                 <VegetableModal/>
                     <ListGroup>
                         <TransitionGroup className="Vegetable-List">
-                            {vegetables.map(({_id, name, price}) => (
+                            {vegetables.map(({_id, name, price, producer}) => (
                                 <CSSTransition key={_id} timeout={500} classNames="fade">
                                     <ListGroupItem>
                                         <Button
@@ -36,7 +36,8 @@ class VegetablesList extends Component {
                                             color="danger"
                                             size="sm"
                                             onClick={this.onDeleteClick.bind(this, _id)}>&times;</Button>
-                                        <b>Name</b> {name} {price}                     
+                                        <b>Name</b> {name} {price}
+                                        <b> Sold by </b> {producer}                     
                                     </ListGroupItem>
                                     
                                 </CSSTransition>
