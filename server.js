@@ -27,7 +27,7 @@ app.use('/api/vegetables', vegetables);
 if(process.env.NODE_ENV === 'production') {
     // set static folder
     app.use(express.static('client/build'));
-    app.use('/*', function(req, res) {
+    app.use('/', function(req, res) {
         res.sendFile(path.join(__dirname, "./client/public/index.html"));
     });
 }

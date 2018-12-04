@@ -28,7 +28,6 @@ class App extends Component {
             <Route exact path="/fruits" component={FruitExport}/>
             <Route exact path="/vegetables" component={VegetableExport}/>
             <Route exact path="/login" component={Login}/>
-            
           </Switch>
         </BrowserRouter>
       </div>
