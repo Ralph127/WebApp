@@ -2,7 +2,7 @@ import axios from 'axios';
 import { GET_VEGETABLES, ADD_VEGETABLE, DELETE_VEGETABLE, VEGETABLES_LOADING, PUT_VEGETABLE } from './types';
 
 export const getVegetables = () => dispatch => {
-    dispatch(setFruitsLoading());
+    dispatch(setVegetablesLoading());
     axios
         .get('/api/vegetables')
         .then(res => 
@@ -31,7 +31,7 @@ export const deleteVegetable = id => dispatch => {
     );
 };
 
-export const setFruitsLoading = () => {
+export const setVegetablesLoading = () => {
     return {
         type: VEGETABLES_LOADING
     };

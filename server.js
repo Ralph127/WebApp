@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 
 const fruits = require('./routes/api/fruits');
 const vegetables = require('./routes/api/vegetables');
+const orders = require('./routes/api/orders');
 const path = require('path');
 
 const app = express();
@@ -22,6 +23,7 @@ mongoose
 
 app.use('/api/fruits', fruits);
 app.use('/api/vegetables', vegetables);
+app.use('/api/orders', orders);
 
 //serve static assest if in production
 if(process.env.NODE_ENV === 'production') {

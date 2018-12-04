@@ -24,8 +24,11 @@ class AppNavbar extends Component {
         <div>
             <Navbar color="dark" dark expand="sm" className="mb-5">
                 <Container>
-                    <NavbarBrand href="/fruits">Fruits List</NavbarBrand>
+                    <NavbarBrand href="/">Login Page</NavbarBrand>
+                    <NavbarBrand href="/home">Home</NavbarBrand>
+                    <NavbarBrand href="/fruits">Fruits List</NavbarBrand>       
                     <NavbarBrand href="/vegetables">Vegetables List</NavbarBrand>
+                    <NavbarBrand href="/orders">Orders List</NavbarBrand>
                     <NavbarToggler onClick={this.toggle} />
                     <Collapse isOpen={this.state.isOpen} navbar>
                         <Nav className="ml-auto" navbar>

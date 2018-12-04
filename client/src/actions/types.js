@@ -9,3 +9,9 @@ export const ADD_VEGETABLE = 'ADD_VEGETABLES';
 export const DELETE_VEGETABLE = 'DELETE_VEGETABLES';
 export const VEGETABLES_LOADING = 'VEGETABLES_LOADING';
 export const PUT_VEGETABLE = 'PUT_VEGETABLE';
+
+export const GET_ORDERS = 'GET_ORDERRS';
+export const ADD_ORDER = 'ADD_ORDER';
+export const DELETE_ORDER = 'DELETE_ORDER';
+export const ORDER_LOADING ='ORDER_LOADING';
+export const PUT_ORDER = 'PUT_ORDER';

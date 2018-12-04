@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import '../App.css'
-
+import AppNavbar from './AppNavbar';
 export default class Home extends Component {
     constructor(props) {
         super(props);
@@ -21,6 +21,7 @@ export default class Home extends Component {
     render() {
         return (
             <div className="Home">
+            <AppNavbar/>
                 <h1>From Farm To Table</h1>
                 <div className="buttons">
                     <form onSubmit={this.handleFruits}>
