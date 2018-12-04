@@ -62,7 +62,3 @@ const mapStateToProps = (state) => ({
 });
 
 export const VegetableExport = connect(mapStateToProps, { getVegetables, deleteVegetable })(VegetablesList);
-
-export default GoogleApiWrapper({
-    apiKey: 'AIzaSyC1DX65BO6j049cTq_jCaw4w5wxotzwz5U'
-  })(VegetablesList);
