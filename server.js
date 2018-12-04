@@ -27,10 +27,10 @@ app.use('/api/vegetables', vegetables);
 //serve static assest if in production
 if(process.env.NODE_ENV === 'production') {
     // set static folder
-    app.use(express.static('client/build'));
+    app.use(express.static('client/public'));
 
     app.get('*', (res,req) => {
-        res.sendFile(path.resolve(__dirname, 'client/build', 'index.html'));
+        res.sendFile(path.resolve(__dirname, 'client/public', 'index.html'));
     });
 }
 
