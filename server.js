@@ -32,10 +32,7 @@ app.use('/api/vegetables', vegetables);
 if(process.env.NODE_ENV === 'production') {
     // set static folder
     app.use(express.static('client/build'));
-
-    app.get('/', (res,req) => {
-        res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
-    });
+    app.use('*', express.static('client/build'));
 }
 
 const port = process.env.PORT || 5000;
