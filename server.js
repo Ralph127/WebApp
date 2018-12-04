@@ -20,7 +20,6 @@ mongoose
     .then(() => console.log('MongoDB connected'))
     .catch(err => console.log(err));
 
-//use routes
 app.use('/api/fruits', fruits);
 app.use('/api/vegetables', vegetables);
 
@@ -28,9 +27,8 @@ app.use('/api/vegetables', vegetables);
 if(process.env.NODE_ENV === 'production') {
     // set static folder
     app.use(express.static('client/build'));
-
-    app.get('*', (res,req) => {
-        res.sendFile(path.resolve(__dirname, 'client/build', 'index.html'));
+    app.use('/*', function(req, res) {
+        res.sendFile(path.join(__dirname, "./client/public/index.html"));
     });
 }
 

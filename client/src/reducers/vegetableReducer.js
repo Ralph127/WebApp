@@ -1,5 +1,5 @@
 
-import { GET_VEGETABLES, ADD_VEGETABLE, DELETE_VEGETABLE, VEGETABLES_LOADING } from '../actions/types';
+import { GET_VEGETABLES, ADD_VEGETABLE, DELETE_VEGETABLE, VEGETABLES_LOADING, PUT_VEGETABLE } from '../actions/types';
 
 const initialState = {
     vegetables: [],
@@ -29,6 +29,11 @@ export default function(state = initialState, action){
                 ...state,
                 loading: true
             }
+        case PUT_VEGETABLE:
+            return{
+                ...state,
+                vegetables: action.payload
+            };
         default:
             return state;
     }

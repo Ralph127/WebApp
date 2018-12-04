@@ -1,5 +1,5 @@
 
-import { GET_FRUITS, ADD_FRUIT, DELETE_FRUIT, FRUITS_LOADING} from '../actions/types';
+import { GET_FRUITS, ADD_FRUIT, DELETE_FRUIT, FRUITS_LOADING, PUT_FRUIT} from '../actions/types';
 
 const initialState = {
     fruits: [],
@@ -28,7 +28,12 @@ export default function(state = initialState, action){
             return {
                 ...state,
                 loading: true
-            }
+            };
+        case PUT_FRUIT:
+            return{
+                ...state,
+                fruits: action.payload
+            };
         default:
             return state;
     }
