@@ -31,9 +31,9 @@ app.use('/api/vegetables', vegetables);
 //serve static assest if in production
 if(process.env.NODE_ENV === 'production') {
     // set static folder
-    app.use(express.static('client/build'));
-    app.use('/*', function(req, res) {
-        res.sendFile(path.join(__dirname, "./client/public/index.html"));
+    app.use('/static', express.static(path.join(__dirname, './client/build//static')));
+    app.use('*', function(req, res) {
+        res.sendFile('index.html', {root: path.join(__dirname, './client/build/')});
     });
 }
 
