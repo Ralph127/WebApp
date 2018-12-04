@@ -21,10 +21,6 @@ mongoose
     .catch(err => console.log(err));
 
 //use routes
-app.get('*', function(req, res) {
-    res.send('hello world');
-})
-
 app.use('/api/fruits', fruits);
 app.use('/api/vegetables', vegetables);
 
