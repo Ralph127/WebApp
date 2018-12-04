@@ -46,8 +46,32 @@ class Maps extends Component {
             >
                 <Marker
                 onClick={this.onMarkerClick}
-                name={'Contact Info: John Doe (814-321-2924)'}
+                name={'Walmart: 814-333-8321'}
                 />
+                <Marker
+                onClick={this.onMarkerClick}
+                position={{ lat: 40.79372546643397, lng: -77.86809114273639 }}
+                name={'Hershey: 882-193-2314'}
+                />
+                <Marker
+                onClick={this.onMarkerClick}
+                position={{ lat: 40.79372546643397, lng: -77.86809114273639 }}
+                name={'IST: 814-237-8484'}
+                />
+
+
+                <Marker
+                onClick={this.onMarkerClick}
+                position={{ lat: 40.79782660262963, lng: -77.86604260560127 }}
+                name={'PepperRidge Farms: 231-231-3214'}
+                />
+
+                <Marker
+                onClick={this.onMarkerClick}
+                position={{ lat: 40.79863095552876, lng: -77.86275384016336 }}
+                name={'John Doe :814-321-2924'}
+                />
+
                 <InfoWindow
                 marker={this.state.activeMarker}
                 visible={this.state.showingInfoWindow}

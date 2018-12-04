@@ -43,6 +43,7 @@ class VegetablePutModal extends Component {
 
         //close modal
         this.toggle();
+        window.location.reload();
     }
 
     render(){
