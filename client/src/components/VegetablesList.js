@@ -41,7 +41,6 @@ class VegetablesList extends Component {
                                         <b>Name</b> {name} {price}
                                         <b> Sold by </b> {producer}                     
                                     </ListGroupItem>
-                                    
                                 </CSSTransition>
                             ))}
                         </TransitionGroup>
