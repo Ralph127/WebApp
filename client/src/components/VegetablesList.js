@@ -6,6 +6,8 @@ import { getVegetables, deleteVegetable } from '../actions/vegetableActions';
 import PropTypes from 'prop-types';
 import VegetableModal from './VegetableModal';
 import AppNavbar from './AppNavbar';
+import { Map, GoogleApiWrapper, InfoWindow, Marker } from 'google-maps-react';
+import Maps from './Maps';
 
 class VegetablesList extends Component {
 
@@ -44,6 +46,7 @@ class VegetablesList extends Component {
                             ))}
                         </TransitionGroup>
                     </ListGroup>
+                    <Maps />
             </Container>
         );
     }
@@ -58,4 +61,8 @@ const mapStateToProps = (state) => ({
     vegetable: state.vegetable
 });
 
-export default connect(mapStateToProps, { getVegetables, deleteVegetable })(VegetablesList);
+export const VegetableExport = connect(mapStateToProps, { getVegetables, deleteVegetable })(VegetablesList);
+
+export default GoogleApiWrapper({
+    apiKey: 'AIzaSyC1DX65BO6j049cTq_jCaw4w5wxotzwz5U'
+  })(VegetablesList);

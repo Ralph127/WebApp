@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Provider } from 'react-redux';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import FruitsList from './components/FruitsList';
-import VegetablesList from './components/VegetablesList';
+import { FruitExport } from './components/FruitsList';
+import { VegetableExport } from './components/VegetablesList';
 import Login from './components/Login';
 import Home from './components/Home';
 import store from './store';
@@ -23,11 +23,11 @@ class App extends Component {
       <div className="App">
         <BrowserRouter>
           <Switch>
-           
-            <Route path="/home" component={Home}/>
-            <Route path="/fruits" component={FruitsList}/>
-            <Route path="/vegetables" component={VegetablesList}/>
-            <Route path="/login" component={Login}/>
+            <Route exact path="/" component={Login}/>
+            <Route exact path="/home" component={FruitExport}/>
+            <Route exact path="/fruits" component={FruitExport}/>
+            <Route exact path="/vegetables" component={VegetableExport}/>
+            <Route exact path="/login" component={Login}/>
             
           </Switch>
         </BrowserRouter>
