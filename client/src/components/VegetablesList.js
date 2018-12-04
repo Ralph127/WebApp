@@ -6,7 +6,6 @@ import { getVegetables, deleteVegetable } from '../actions/vegetableActions';
 import PropTypes from 'prop-types';
 import VegetableModal from './VegetableModal';
 import AppNavbar from './AppNavbar';
-import { Map, GoogleApiWrapper, InfoWindow, Marker } from 'google-maps-react';
 import Maps from './Maps';
 
 class VegetablesList extends Component {
