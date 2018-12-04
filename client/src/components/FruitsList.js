@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { getFruits, deleteFruit } from '../actions/fruitActions';
 import PropTypes from 'prop-types';
 import FruitModal from './FruitModal';
+import FruitPutModal from './FruitPutModal';
 import AppNavbar from './AppNavbar';
 
 class FruitsList extends Component {
@@ -34,7 +35,8 @@ class FruitsList extends Component {
                                             className="remove-btn"
                                             color="danger"
                                             size="sm"
-                                            onClick={this.onDeleteClick.bind(this, _id)}>&times;</Button>
+                                            onClick={this.onDeleteClick.bind(this, _id)}>Delete</Button>
+                                            <FruitPutModal id={_id} name={name} price={price} producer={producer}/>    
                                         <b>Name</b> {name} {price}
                                         <b> Sold by </b> {producer}                     
                                     </ListGroupItem>

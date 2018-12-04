@@ -35,4 +35,19 @@ router.delete('/:id', (req, res) => {
         .catch(err => res.status(404).json({success: false}));
 });
 
+//@route PUT api/vegetables
+//@desc put a vegetables
+//@access Public
+router.put('/:id', (req, res) => {
+    Vegetable.findById(req.params.id, function (err, vegetable){
+        vegetable.name = req.body.name;
+        vegetable.price = req.body.price;
+        vegetable.producer = req.body.producer;
+        vegetable.save()
+    });
+    Vegetable.find()
+    .sort({date: -1})
+    .then(Vegetables => res.json(Vegetables))
+    .catch(err => res.status(404).json({success: false}));
+});
 module.exports = router;

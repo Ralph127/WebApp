@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { getVegetables, deleteVegetable } from '../actions/vegetableActions';
 import PropTypes from 'prop-types';
 import VegetableModal from './VegetableModal';
+import VegetablePutModal from './VegetablePutModal';
 import AppNavbar from './AppNavbar';
 
 class VegetablesList extends Component {
@@ -35,7 +36,8 @@ class VegetablesList extends Component {
                                             className="remove-btn"
                                             color="danger"
                                             size="sm"
-                                            onClick={this.onDeleteClick.bind(this, _id)}>&times;</Button>
+                                            onClick={this.onDeleteClick.bind(this, _id)}>Delete</Button>
+                                            <VegetablePutModal id={_id} name={name} price={price} producer={producer}/>
                                         <b>Name</b> {name} {price}
                                         <b> Sold by </b> {producer}                     
                                     </ListGroupItem>

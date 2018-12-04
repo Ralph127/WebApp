@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { GET_VEGETABLES, ADD_VEGETABLE, DELETE_VEGETABLE, VEGETABLES_LOADING } from './types';
+import { GET_VEGETABLES, ADD_VEGETABLE, DELETE_VEGETABLE, VEGETABLES_LOADING, PUT_VEGETABLE } from './types';
 
 export const getVegetables = () => dispatch => {
     dispatch(setFruitsLoading());
@@ -35,4 +35,14 @@ export const setFruitsLoading = () => {
     return {
         type: VEGETABLES_LOADING
     };
+};
+
+export const putVegetable = (id, vegetable) => dispatch => {
+    axios.put(`/api/vegetables/${id}`, vegetable)
+        .then(res => 
+        dispatch({
+            type: PUT_VEGETABLE,
+            payload: res.data
+        })
+    );
 };
