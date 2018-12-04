@@ -19,3 +19,93 @@
   opacity: 0.01;
   transition:  opacity 1000ms ease-in
 }
+
+/*
+======================
+  Login Page Styling
+======================
+*/
+.Login{
+  background: url("./resources/images/seehafers_acres_aerial.jpg");
+  background-position: center top;
+  background-repeat: no-repeat;
+  text-align: center;
+  height: 1920px;
+}
+
+.heading h1{
+  color: white;
+  text-align: center;
+  padding-top: 30px;
+   text-decoration: underline;
+}
+
+.heading h2{
+  color: white;
+  text-align: center;
+}
+
+.login label{
+  margin-top: 2em;
+  color: white;
+  font-size: 40px;
+}
+
+.Login form{
+  color: white;
+  margin-top: 5em;
+  width: 300px;
+  font-size: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.Login button{
+  background-color: dodgerblue;
+  color: white
+}
+
+/*
+=====================
+  Home Page Styling
+=====================
+*/
+
+.Home {
+  background: url("./resources/images/seehafers_acres_aerial.jpg");
+  background-position: center top;
+  background-repeat: no-repeat;
+  text-align: center;
+  height: 1920px;
+}
+
+.Home h1{
+  color: white;
+  padding-top: 30px;
+}
+
+/*Center form elements on page*/
+.Home form{
+  padding-left: 33%;
+}
+
+/*Buttons on home page are form elements*/
+.Home input{
+  background-color: dodgerblue;
+  color:white;
+  margin: 1em;
+  border-radius: 50%;
+  width: 150px;
+  height: 75px;
+  font-size: 20px;
+  font-weight: bold;
+
+  /*keeps elements inline*/
+  float:left;
+  position: relative;
+  left: 10%;
+}
+
+.produceSelect:hover{
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}

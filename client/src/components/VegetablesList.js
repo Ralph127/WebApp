@@ -7,6 +7,7 @@ import PropTypes from 'prop-types';
 import VegetableModal from './VegetableModal';
 import VegetablePutModal from './VegetablePutModal';
 import AppNavbar from './AppNavbar';
+import Maps from './Maps';
 
 class VegetablesList extends Component {
 
@@ -45,6 +46,7 @@ class VegetablesList extends Component {
                             ))}
                         </TransitionGroup>
                     </ListGroup>
+                    <Maps />
             </Container>
         );
     }
@@ -59,4 +61,4 @@ const mapStateToProps = (state) => ({
     vegetable: state.vegetable
 });
 
-export default connect(mapStateToProps, { getVegetables, deleteVegetable })(VegetablesList);
+export const VegetableExport = connect(mapStateToProps, { getVegetables, deleteVegetable })(VegetablesList);
