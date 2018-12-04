@@ -46,7 +46,7 @@ class Maps extends Component {
             >
                 <Marker
                 onClick={this.onMarkerClick}
-                name={'Here is where the information goes'}
+                name={'Contact Info: John Doe (814-321-2924)'}
                 />
                 <InfoWindow
                 marker={this.state.activeMarker}
