@@ -23,11 +23,11 @@ class App extends Component {
       <div className="App">
         <BrowserRouter>
           <Switch>
-            <Route exact path="/" component={Login}/>
-            <Route exact path="/home" component={FruitExport}/>
+            {/* <Route exact path="/" component={Login}/>
+            <Route exact path="/home" component={FruitExport}/> */}
             <Route exact path="/fruits" component={FruitExport}/>
             <Route exact path="/vegetables" component={VegetableExport}/>
-            <Route exact path="/login" component={Login}/>
+            {/*<Route exact path="/login" component={Login}/> */}
           </Switch>
         </BrowserRouter>
       </div>
