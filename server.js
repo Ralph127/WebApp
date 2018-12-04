@@ -31,10 +31,8 @@ app.use('/api/vegetables', vegetables);
 //serve static assest if in production
 if(process.env.NODE_ENV === 'production') {
     // set static folder
-    app.use('/static', express.static(path.join(__dirname, './client/build//static')));
-    app.use('*', function(req, res) {
-        res.sendFile('index.html', {root: path.join(__dirname, './client/build/')});
-    });
+    app.use(express.static('client/build'));
+    app.use('*', express.static('client/build'));
 }
 
 const port = process.env.PORT || 5000;
