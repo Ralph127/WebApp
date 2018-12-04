@@ -7,8 +7,12 @@ import PropTypes from 'prop-types';
 import FruitModal from './FruitModal';
 import FruitPutModal from './FruitPutModal';
 import AppNavbar from './AppNavbar';
+import Maps from './Maps';
 
+
+  
 class FruitsList extends Component {
+ 
 
     componentDidMount(){
         this.props.getFruits();
@@ -37,6 +41,7 @@ class FruitsList extends Component {
                                             size="sm"
                                             onClick={this.onDeleteClick.bind(this, _id)}>Delete</Button>
                                             <FruitPutModal id={_id} name={name} price={price} producer={producer}/>    
+
                                         <b>Name</b> {name} {price}
                                         <b> Sold by </b> {producer}                     
                                     </ListGroupItem>
@@ -45,6 +50,7 @@ class FruitsList extends Component {
                             ))}
                         </TransitionGroup>
                     </ListGroup>
+                    <Maps /> 
             </Container>
         );
     }
@@ -59,4 +65,5 @@ const mapStateToProps = (state) => ({
     fruit: state.fruit
 });
 
-export default connect(mapStateToProps, { getFruits, deleteFruit })(FruitsList);
+export const FruitExport = connect(mapStateToProps, { getFruits, deleteFruit })(FruitsList);
+
